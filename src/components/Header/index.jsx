@@ -1,29 +1,35 @@
-import { useState } from "react";
 import Logo from "../../assets/Logo.svg";
 import { MdSearch, MdShoppingCart } from "react-icons/md";
+import styles from "./style.module.scss";
 
-export const Header = () => {
-   const [value, setValue] = useState("");
-
+const Header = ({ setVisible, cartList, setValue }) => {
+  
    return (
-      <header>
+      <header className={styles.headerContainer}>
          <img src={Logo} alt="Logo Kenzie Burguer" />
-         <div>
-            <button>
-                <MdShoppingCart size={21} />
-                <span>0</span>
-            </button>
+         <div className={styles.searchDiv}>
             <form>
                <input
+                  placeholder="Digite o produto"
                   type="text"
-                  value={value}
                   onChange={(e) => setValue(e.target.value)}
                />
-               <button type="submit">
-                 <MdSearch size={21} />
+
+               <button 
+                  type="submit" 
+                  className={styles.searchButton}
+                  onClick={(e) => e.preventDefault()}>
+                  <MdSearch className={styles.searchIcon} size={21} />
                </button>
             </form>
+
+            <button className={styles.cartButton} onClick={() => setVisible(true)}>
+               <MdShoppingCart className={styles.cartIcon} size={21} />
+               <span className={`${styles.countCart}`}>{cartList.length}</span>
+            </button>
          </div>
       </header>
    );
 };
+
+export default Header;

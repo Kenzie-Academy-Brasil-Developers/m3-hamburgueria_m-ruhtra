@@ -1,0 +1,36 @@
+.cardContainer {
+  width: 18.75rem;
+  height: 21.625rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px solid var(--color-grey-100);
+  border-radius: 0.3125rem;
+
+  background-color: var(--color-grey-0);
+  
+  img {
+    height: 150px;
+  }
+
+  &:focus-within {
+    border-color: var(--color-primary);
+  }
+}
+
+.cardInfo {
+  width: 100%;
+  height: 196px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.875rem;
+
+  padding: 1.25rem;
+
+  background-color: var(--color-white);
+}

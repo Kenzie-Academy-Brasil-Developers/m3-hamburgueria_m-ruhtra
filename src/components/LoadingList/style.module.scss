@@ -1,0 +1,39 @@
+.loadingListContainer {
+  width: 95%;
+  margin: 1rem auto;
+}
+
+.loadingListItems {
+  width: 98%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  overflow-x: auto;
+  
+  margin: 0 auto;
+  padding-bottom: 1rem;
+  gap: 3.25rem;
+
+  @media(min-width: 1020px){
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media(min-width: 1300px){
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  & > div {
+   width: 18.75rem;
+   height: 21.625rem;
+  
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+  
+   border-radius: 0.3125rem;
+  
+   background-color: var(--color-grey-0);
+  }
+}

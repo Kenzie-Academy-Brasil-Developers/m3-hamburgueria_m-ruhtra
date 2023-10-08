@@ -1,9 +1,10 @@
-import { HomePage } from "./pages/HomePage"
+import { HomePage } from "./pages";
+import "./styles/index.scss";
 
 function App() {
   return (
     <>
-      <HomePage />
+      <HomePage/>
     </>
   )
 }
